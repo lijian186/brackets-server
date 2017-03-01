@@ -2,8 +2,8 @@ FROM ubuntu:14.04
 MAINTAINER Boyan Rabchev <boyan@rabchev.com>
 
 ENV DEBIAN_FRONTEND noninteractive
-
 RUN apt-get update && \
+    apt-get -y install --reinstall ca-certificates && \
     apt-get -y install software-properties-common
 RUN add-apt-repository ppa:git-core/ppa && \
     apt-get update && \
